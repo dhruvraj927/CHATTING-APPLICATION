@@ -1,2 +1,3 @@
 # CHATTING-APPLICATION
-Make a chat application using the socket .io 
+<h1>Chat application</h1>
+
