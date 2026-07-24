@@ -1,12 +1,8 @@
-# CHATTING-APPLICATION
-<h1>Chat application</h1>
-<br>
-## 🛠️ Tech Stack
+<h2 align="center">✨ Features</h2>
 
-| Technology | Purpose |
-|---|---|
-| React | UI component library |
-| React Router | Client-side routing |
-| JavaScript (ES6+) | Core language |
-| CSS | Styling |
-| Fetch API | Data fetching |
+<p align="center">
+  <img src="https://img.shields.io/badge/JWT-Authentication-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/User-Login%20%26%20Register-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Crypto-Password%20Encryption-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Socket.IO-Real--Time%20Chat-black?style=for-the-badge">
+</p>
