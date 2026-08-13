@@ -1,7 +1,7 @@
 export function Register(){
     return(
         <>
-        <title>registerpage</title>
+            <h1>Register</h1>
         </>
     )
 }
