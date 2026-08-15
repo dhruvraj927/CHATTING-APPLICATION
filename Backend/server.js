@@ -29,10 +29,12 @@ dotenv.config();
        console.log("Message received:", message);
 
         // SAVE MESSAGE TO MONGODB
-        const newMessage = await Message.create({
-            sender: "Dhruv",
-            message: message
-        });
+      //   const newMessage = await Message.create({
+      //       sender: "Dhruv",
+      //       message: message
+      //   });
+
+      const { senderId, receiverId, message } = message;
 
         console.log("Saved in MongoDB:", newMessage);
 

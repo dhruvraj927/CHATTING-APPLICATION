@@ -45,7 +45,7 @@ export function Chatpage() {
        
         console.log("Sending:", message);
 
-        socket.emit("send_message",message)
+        socket.emit("send_message",{message,senderId:"senderId",receiverId:"receiverId"});
 
         // setMessages((prev) => [...prev, message]);
 
