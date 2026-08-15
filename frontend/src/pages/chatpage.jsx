@@ -1,15 +1,21 @@
 import {useEffect , useState} from "react";
 import {io} from "socket.io-client";
 import './chatpage.css'
+    
+    
+    
+const socket = io("http://localhost:5000");
 
 
 export function Chatpage() {
+    
+    
+
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
 
-        const socket = io("http://localhost:3000");
 
         socket.on("connect", () => {
             console.log("connected to server");
@@ -17,8 +23,13 @@ export function Chatpage() {
 
        
         socket.on("receive_message", (message) => {
-            setMessages((prev) => [...prev, message]);
-        });
+
+            setMessages((prev) => [
+                ...prev,
+                message
+            ]);
+
+});
 
        
         return () => {
@@ -34,9 +45,13 @@ export function Chatpage() {
        
         console.log("Sending:", message);
 
-        setMessages((prev) => [...prev, message]);
+        socket.emit("send_message",message)
+
+        // setMessages((prev) => [...prev, message]);
 
         setMessage("");
+
+
     };
     return(
     <>
