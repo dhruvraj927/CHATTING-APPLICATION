@@ -1,114 +1,114 @@
-import {useEffect , useState} from "react";
-import {io} from "socket.io-client";
-import './chatpage.css'
+// import {useEffect , useState} from "react";
+// import {io} from "socket.io-client";
+// import './chatpage.css'
     
     
     
-const socket = io("http://localhost:5000");
+// const socket = io("http://localhost:5000");
 
 
-export function Chatpage() {
+// export function Chatpage() {
     
     
 
-    const [message, setMessage] = useState("");
-    const [messages, setMessages] = useState([]);
+//     const [message, setMessage] = useState("");
+//     const [messages, setMessages] = useState([]);
 
-    useEffect(() => {
+//     useEffect(() => {
 
 
-        socket.on("connect", () => {
-            console.log("connected to server");
-        });
+//         socket.on("connect", () => {
+//             console.log("connected to server");
+//         });
 
        
-        socket.on("receive_message", (message) => {
+//         socket.on("receive_message", (message) => {
 
-            setMessages((prev) => [
-                ...prev,
-                message
-            ]);
+//             setMessages((prev) => [
+//                 ...prev,
+//                 message
+//             ]);
 
-});
-
-       
-        return () => {
-            socket.disconnect();
-        };
-
-    }, []);
-
-    const messagesend = () => {
-
-        if (message.trim() === "") return;
+// });
 
        
-        console.log("Sending:", message);
+//         return () => {
+//             socket.disconnect();
+//         };
 
-        socket.emit("send_message",{message,senderId:"senderId",receiverId:"receiverId"});
+//     }, []);
 
-        // setMessages((prev) => [...prev, message]);
+//     const messagesend = () => {
 
-        setMessage("");
+//         if (message.trim() === "") return;
+
+       
+//         console.log("Sending:", message);
+
+//         socket.emit("send_message",{message,senderId:"senderId",receiverId:"receiverId"});
+
+//         // setMessages((prev) => [...prev, message]);
+
+//         setMessage("");
 
 
-    };
-    return(
-    <>
-        <title>CHAT PAGE</title>
-        <div className="chat_page">
+//     };
+//     return(
+//     <>
+//         <title>CHAT PAGE</title>
+//         <div className="chat_page">
 
             
-            <div className="receiver_information">
+//             <div className="receiver_information">
 
-                <div className="receiver_image">
-                    <img src="/user.png" alt="receiver" />
-                </div>
+//                 <div className="receiver_image">
+//                     <img src="/user.png" alt="receiver" />
+//                 </div>
 
-                <div className="receiver_details">
-                    <h3>Developer</h3>
-                    <p>Online</p>
-                </div>
+//                 <div className="receiver_details">
+//                     <h3>Developer</h3>
+//                     <p>Online</p>
+//                 </div>
 
-            </div>
+//             </div>
 
-            <div className="messages">
+//             <div className="messages">
 
-                {messages.map((msg, index) => (
-                    <div className="message_box" key={index}>
-                        {msg}
-                    </div>
-                ))}
+//                 {messages.map((msg, index) => (
+//                     <div className="message_box" key={index}>
+//                         {msg}
+//                     </div>
+//                 ))}
 
-            </div>
+//             </div>
 
-               <div className="message_write">
+//                <div className="message_write">
 
-                <input
-                    type="text"
-                    placeholder="Write a message..."
-                    className="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    onKeyDown={(e) => {
-                        if (e.key === "Enter") {
-                            messagesend();
-                        }
-                    }}
-                />
+//                 <input
+//                     type="text"
+//                     placeholder="Write a message..."
+//                     className="message"
+//                     value={message}
+//                     onChange={(e) => setMessage(e.target.value)}
+//                     onKeyDown={(e) => {
+//                         if (e.key === "Enter") {
+//                             messagesend();
+//                         }
+//                     }}
+//                 />
 
-                <button
-                    className="send"
-                    onClick={messagesend}
-                >
-                    SEND
-                </button>
+//                 <button
+//                     className="send"
+//                     onClick={messagesend}
+//                 >
+//                     SEND
+//                 </button>
 
-            </div>
+//             </div>
 
-        </div>
+//         </div>
 
-    </>
+//     </>
     
-)
-}
+// )
+// }

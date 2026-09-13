@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4000/chatapp/login", {
+      const response = await fetch("http://localhost:5000/chatapp/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,6 +29,7 @@ function Login() {
 
       if (response.ok) {
         alert("Login successful");
+        navigate("/homepage");
       } else {
         alert("Login failed , Now user found !!!!");
       }
@@ -42,7 +43,7 @@ function Login() {
     <div className="login-container">
       <div className="login-box">
 
-        <h2>Login</h2>
+        <title>Login-page</title>
 
         <form onSubmit={handleLogin}>
 
@@ -70,7 +71,7 @@ function Login() {
 
         <button
           className="create-account"
-          onClick={() => navigate("/new-user")}
+          onClick={() => navigate("/register")}
         >
           Create New User
         </button>

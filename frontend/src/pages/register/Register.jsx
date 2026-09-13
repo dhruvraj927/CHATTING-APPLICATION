@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4000/chatapp/login/create", {
+      const response = await fetch("http://localhost:5000/chatapp/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ function Register() {
     <div className="new-user-container">
       <div className="new-user-box">
 
-        <h2>Create New User</h2>
+        <title>Register-page</title>
 
         <form onSubmit={handleRegister}>
 
