@@ -5,14 +5,20 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 
-if(!process.env.MONGO_URI){
-    console.log("MONGO_URI is not defined in the .env file");
-    throw new Error("MONGO_URI is not defined in the .env file");
+if(!process.env.pg_port){
+    throw new Error("pg_port is not defined in the .env file"); 
+}
+if(!process.env.pg_database){
+    throw new Error("pg_database is not defined in the .env file"); 
+}
+if(!process.env.pg_password){
+    throw new Error("pg_password is not defined in the .env file"); 
 }
 
 const config = {
-    MONGO_URI: process.env.MONGO_URI,
     PORT: process.env.PORT || 5000,
+    postgrs_password:process.env.pg_password,
+    pg_name:process.env.pg_database
 }
 
 export default config;
