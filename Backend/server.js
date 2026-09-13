@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import connectDB from "./config/connectdb.js"
 import express from "express";
 import cors from 'cors';
+import pool from './src/config/connectdb.js'
+import route from './src/routes/routes.js'
 import http from "http";
 import {Server} from "socket.io";
 

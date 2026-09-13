@@ -3,43 +3,45 @@
   box-sizing: border-box;
 }
 
-.login-container {
+.new-user-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-family: Arial, sans-serif;
 
-  /* Background */
   background: linear-gradient(135deg, #667eea, #764ba2);
+
   position: relative;
   overflow: hidden;
 }
 
-/* Decorative circles */
-.login-container::before,
-.login-container::after {
+.new-user-container::before,
+.new-user-container::after {
   content: "";
   position: absolute;
+
   width: 250px;
   height: 250px;
+
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
+
   filter: blur(5px);
 }
 
-.login-container::before {
+.new-user-container::before {
   top: 10%;
   left: 25%;
 }
 
-.login-container::after {
+.new-user-container::after {
   bottom: 10%;
   right: 25%;
 }
 
-/* Glass card */
-.login-box {
+.new-user-box {
   position: relative;
   z-index: 1;
 
@@ -47,6 +49,7 @@
   padding: 35px;
 
   background: rgba(255, 255, 255, 0.15);
+
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 
@@ -56,23 +59,24 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.login-box h2 {
+.new-user-box h2 {
   margin: 0 0 25px;
 
   text-align: center;
+
   font-size: 26px;
   font-weight: 600;
 
   color: white;
 }
 
-.login-box form {
+.new-user-box form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.login-box input {
+.new-user-box input {
   width: 100%;
   padding: 13px 14px;
 
@@ -86,17 +90,16 @@
   font-size: 14px;
 }
 
-.login-box input::placeholder {
+.new-user-box input::placeholder {
   color: rgba(255, 255, 255, 0.75);
 }
 
-.login-box input:focus {
+.new-user-box input:focus {
   border-color: rgba(255, 255, 255, 0.7);
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Login button */
-.login-box form button {
+.new-user-box form button {
   padding: 13px;
 
   border: none;
@@ -109,25 +112,25 @@
   font-weight: 600;
 
   cursor: pointer;
+
   transition: 0.2s;
 }
 
-.login-box form button:hover {
+.new-user-box form button:hover {
   background: white;
   transform: translateY(-1px);
 }
 
-.login-box p {
+.new-user-box p {
   margin: 22px 0 8px;
 
   text-align: center;
-  font-size: 13px;
 
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Create account button */
-.create-account {
+.back-login {
   width: 100%;
   padding: 11px;
 
@@ -143,7 +146,7 @@
   transition: 0.2s;
 }
 
-.create-account:hover {
+.back-login:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 

@@ -1,23 +1,18 @@
-import { useState } from 'react'
-import { Routes, Route, Navigate } from "react-router-dom";
-import {Login} from './pages/login/Login.jsx'
-import {Register} from './pages/register/Register.jsx'
-import { Homepage } from './pages/Homepage.jsx'
-import {Chatpage} from './pages/chatpage.jsx'
+import {BrowserRouter ,Routes,Route} from 'react-router-dom';
 import './App.css'
-
+import Login from './pages/login/Login.jsx';
+import Register from './pages/register/Register.jsx';
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
+    <BrowserRouter>
+    
     <Routes>
-      <Route path="/homepage" element={<Homepage />} />
-      <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/chatpage" element={<Chatpage />} />
-      
+      <Route path="/" element={<Login />} />
+      <Route path="/new-user" element={<Register />} />
     </Routes>
+    </BrowserRouter>
   )
 }
 
